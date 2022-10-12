@@ -1,0 +1,33 @@
+Steps to run the app
+
+
+1. Switch to app directory:
+$ cd app/
+
+2. Install dependencies
+$ pip install -r requirements.txt
+
+3. Initialize the DB
+$ python built_db.py
+
+4. Ingest the Data into Tables
+$ python ingest_in_db.py
+
+5. Run the unit test cases
+$ python -m pytest tests/
+
+6. Run the Flask app
+$ python app.py
+
+7. Get the Weather Data
+curl -X GET "http://127.0.0.1:5000/api/weather"
+curl -X GET "http://127.0.0.1:5000/api/weather?station_id=USC00111436&date_=20000101&page=1"
+
+8. Get the Yield Data
+curl -X GET "http://127.0.0.1:5000/api/yield"
+curl -X GET "http://127.0.0.1:5000/api/yield?year_=2000&page=1"
+
+9. Get the Weather Stats Data
+curl -X GET "http://127.0.0.1:5000/api/weather/stats"
+curl -X GET "http://127.0.0.1:5000/api/weather/stats?station_id=USC00111436&year_=2000&page=1"
+
